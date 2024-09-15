@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../public/fonts/MYRIADPRO-BOLDCOND.OTF') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plaza Personal Use';
+  src: url('../public/fonts/PlazapersonaluseBold-d91XR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Golden Beach Personal Use';
+  src: url('../public/fonts/GoldenbeachpersonaluseBdit-jEgDM.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'idolwild';
+  src: url('../public/fonts/idolwild.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes vibrateText {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.scrolling-text {
+  animation: vibrateText 0.5s linear infinite;
+  display: inline-block;
+}

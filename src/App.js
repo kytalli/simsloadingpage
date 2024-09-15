@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MemeGenerator from './memegenerator';
+import './App.css'; // Make sure this import is present
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ padding: '10px' }}>
+      <div style={{ 
+        overflow: 'hidden',
+        width: '100%',
+        marginBottom: '10px'
+      }}>
+        <h1 className="scrolling-text" style={{ 
+          fontFamily: 'idolwild',
+          fontSize: '3rem',
+          margin: 0,
+          padding: '10px 0'
+        }}>
+          Sims Loading Page Editor  !!!!!
+        </h1>
+      </div>
+      <MemeGenerator />
     </div>
   );
 }
