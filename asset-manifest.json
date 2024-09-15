@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/simsloadingpage/static/css/main.abb821f9.css",
-    "main.js": "/simsloadingpage/static/js/main.ba5a2620.js",
+    "main.js": "/simsloadingpage/static/js/main.c0cb4377.js",
     "static/js/453.637b1628.chunk.js": "/simsloadingpage/static/js/453.637b1628.chunk.js",
     "static/media/PlazapersonaluseBold-d91XR.otf": "/simsloadingpage/static/media/PlazapersonaluseBold-d91XR.6459363efdc953fe09bc.otf",
     "static/media/GoldenbeachpersonaluseBdit-jEgDM.otf": "/simsloadingpage/static/media/GoldenbeachpersonaluseBdit-jEgDM.a1d727909272c589ec34.otf",
@@ -9,11 +9,11 @@
     "static/media/idolwild.ttf": "/simsloadingpage/static/media/idolwild.4903bf32e44924eb89d4.ttf",
     "index.html": "/simsloadingpage/index.html",
     "main.abb821f9.css.map": "/simsloadingpage/static/css/main.abb821f9.css.map",
-    "main.ba5a2620.js.map": "/simsloadingpage/static/js/main.ba5a2620.js.map",
+    "main.c0cb4377.js.map": "/simsloadingpage/static/js/main.c0cb4377.js.map",
     "453.637b1628.chunk.js.map": "/simsloadingpage/static/js/453.637b1628.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abb821f9.css",
-    "static/js/main.ba5a2620.js"
+    "static/js/main.c0cb4377.js"
   ]
 }
