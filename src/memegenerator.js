@@ -21,6 +21,7 @@ const MemeGenerator = () => {
 
   const generateMeme = () => {
     if (memeContainerRef.current) {
+      const scale = 2; // Increase resolution
       const templateImg = memeContainerRef.current.querySelector('img');
       html2canvas(memeContainerRef.current, {
         width: templateImg.width,
@@ -60,7 +61,7 @@ const MemeGenerator = () => {
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: "'Myriad Pro', 'Source Sans Pro', 'Segoe UI', sans-serif", // Myriad Pro with fallbacks
-        fontSize: '24px', // Larger font size for template2
+        fontSize: 'clamp(16px, 4vw, 24px)', // Responsive font size
         fontWeight: '800',
         color: '#A1B7D5', // Different color (OrangeRed) for template2
         boxSizing: 'border-box',
@@ -82,7 +83,7 @@ const MemeGenerator = () => {
       alignItems: 'center',
       justifyContent: 'center',
       fontFamily: "'Archivo', sans-serif",
-      fontSize: '18px',
+      fontSize: 'clamp(14px, 3vw, 18px)', // Responsive font size
       fontWeight: '700',
       color: '#007BA7',
       boxSizing: 'border-box',
