@@ -7,8 +7,8 @@ const MemeGenerator = () => {
   const memeContainerRef = useRef(null);
 
   const memeTemplates = {
-    sims4: '/images/simsloadingpage.png',
-    sims3: '/images/TS3LoadScreen.png',
+    sims4: `${process.env.PUBLIC_URL}/images/simsloadingpage.png`,
+    sims3: `${process.env.PUBLIC_URL}/images/TS3LoadScreen.png`,
   };
 
   const handleTextChange = (e) => {
