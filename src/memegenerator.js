@@ -83,7 +83,7 @@ const MemeGenerator = () => {
     if (selectedTemplate === 'sims3') {
       return {
         ...commonStyles,
-        top: isMobile ? '85%' : '90%',
+        top: isMobile ? '75%' : '90%',
         width: isMobile ? '90%' : '80%',
         fontFamily: "'Myriad Pro', 'Source Sans Pro', 'Segoe UI', sans-serif",
         fontSize: 'clamp(10px, 4vw, 24px)',
