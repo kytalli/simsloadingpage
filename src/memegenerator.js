@@ -19,29 +19,45 @@ const MemeGenerator = () => {
     setSelectedTemplate(e.target.value);
   };
 
-  const generateMeme = () => {
+  const generateMeme = async () => {
     if (memeContainerRef.current) {
       const scale = 2; // Increase resolution
       const templateImg = memeContainerRef.current.querySelector('img');
-      html2canvas(memeContainerRef.current, {
+      const canvas = await html2canvas(memeContainerRef.current, {
         width: templateImg.width,
         height: templateImg.height,
         x: templateImg.offsetLeft,
         y: templateImg.offsetTop,
         backgroundColor: null,
-        scale: 1
-      }).then(canvas => {
-        canvas.toBlob(blob => {
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'generated-meme.png';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          URL.revokeObjectURL(url);
-        }, 'image/png');
+        scale: scale
       });
+  
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], 'meme.png', { type: 'image/png' });
+        const shareData = {
+          title: 'Sims Loading Page Meme',
+          text: 'Check out this Sims Loading Page Meme I created!',
+          files: [file]
+        };
+  
+        try {
+          if (navigator.canShare && navigator.canShare(shareData)) {
+            await navigator.share(shareData);
+          } else {
+            // Fallback to download if Web Share API is not supported
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'generated-meme.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+          }
+        } catch (err) {
+          console.error('Error sharing:', err);
+        }
+      }, 'image/png');
     }
   };
 
