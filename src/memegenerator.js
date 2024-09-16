@@ -62,35 +62,13 @@ const MemeGenerator = () => {
   };
 
   const getTextStyle = () => {
-    if (selectedTemplate === 'sims3') {
-      return {
-        position: 'absolute',
-        top: '90%', // Different positioning for template2
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '80%', // Wider text box for template2
-        padding: '10px',
-        backgroundColor: 'transparent',
-        textAlign: 'center',
-        minHeight: '50px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: "'Myriad Pro', 'Source Sans Pro', 'Segoe UI', sans-serif", // Myriad Pro with fallbacks
-        fontSize: 'clamp(10px, 4vw, 24px)', // Responsive font size
-        fontWeight: '800',
-        color: '#A1B7D5', // Different color (OrangeRed) for template2
-        boxSizing: 'border-box',
-        wordWrap: 'break-word'
-      };
-    }
-    // Default style for template1 and others
-    return {
+    const isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+  
+    const commonStyles = {
       position: 'absolute',
-      top: '65%',
       left: '50%',
       transform: 'translateX(-50%)',
-      width: '40%',
+      width: isMobile ? '80%' : '40%',
       padding: '10px',
       backgroundColor: 'transparent',
       textAlign: 'center',
@@ -98,12 +76,30 @@ const MemeGenerator = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontFamily: "'Archivo', sans-serif",
-      fontSize: 'clamp(8px, 3vw, 18px)', // Responsive font size
-      fontWeight: '700',
-      color: '#007BA7',
       boxSizing: 'border-box',
       wordWrap: 'break-word'
+    };
+  
+    if (selectedTemplate === 'sims3') {
+      return {
+        ...commonStyles,
+        top: isMobile ? '85%' : '90%',
+        width: isMobile ? '90%' : '80%',
+        fontFamily: "'Myriad Pro', 'Source Sans Pro', 'Segoe UI', sans-serif",
+        fontSize: 'clamp(10px, 4vw, 24px)',
+        fontWeight: '800',
+        color: '#A1B7D5',
+      };
+    }
+  
+    // Default style for sims4
+    return {
+      ...commonStyles,
+      top: isMobile ? '60%' : '65%',
+      fontFamily: "'Archivo', sans-serif",
+      fontSize: 'clamp(8px, 3vw, 18px)',
+      fontWeight: '700',
+      color: '#007BA7',
     };
   };
 
